@@ -4,18 +4,12 @@ using namespace std;
 class Solution {
 public:
     double average(vector<int>& salary) {
-        double sum = 0, n = salary.size();
-        int min_sal = INT_MAX, max_sal = 0;
-        for (int i = 0; i < n; i++)
-        {
-            if (salary[i] < min_sal)
-                min_sal = salary[i];
-            else if (salary[i] > max_sal)
-                max_sal = salary[i];
-            sum += salary[i];
-        }
-        sum = sum - (min_sal + max_sal);
-        return sum / (n - 2);
+        sort(salary.begin(), salary.end());
+        double sum = 0, count = salary.size() - 2;
+        vector<int>::iterator a = next(salary.begin(), 1), b = prev(salary.end(), 1);
+        for (auto i = a; i != b; i++)
+            sum += (*i);
+        return (sum / count);
     }
 };
 
