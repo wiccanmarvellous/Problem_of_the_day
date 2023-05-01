@@ -33,6 +33,18 @@ public:
     }
 };
 
+// Third approach
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        double i, j, ans;
+        i = *min_element(salary.begin(), salary.end());
+        j = *max_element(salary.begin(), salary.end());
+        ans = accumulate(salary.begin(), salary.end(), 0.);
+        return (ans - i - j) / (salary.size() - 2);
+    }
+};
+
 
 int main()
 {
