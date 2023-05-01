@@ -33,6 +33,7 @@ public:
     }
 };
 
+
 int main()
 {
     vector<int> salary{4000, 3000, 1000, 2000};
