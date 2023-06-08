@@ -1,2 +1,4 @@
 *.exe
 *.python
+temp.cpp
+temp.py
