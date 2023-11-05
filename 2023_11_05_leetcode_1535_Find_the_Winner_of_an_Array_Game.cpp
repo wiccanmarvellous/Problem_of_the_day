@@ -28,3 +28,24 @@ public:
         return -1;
     }
 };
+
+class Solution {
+public:
+    int getWinner(vector<int>& arr, int k) {
+        int n = arr.size();
+        if (k >= n)
+            return *max_element(begin(arr), end(arr));
+        int max = arr[0], count = 0;
+        for (int i = 1; i < n; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+                count = 1;
+            }
+            else
+                count++;
+            if (count == k)
+                return max;
+        }
+        return max;
+    }
+};
